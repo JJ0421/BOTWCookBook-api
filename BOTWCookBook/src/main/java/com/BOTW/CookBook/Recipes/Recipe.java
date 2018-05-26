@@ -13,17 +13,19 @@ public class Recipe {
 	private String ingredients;
 	private String effect;
 	private String notes;
+	private String hearts;
 	@Lob
 	private byte[] image;
 	
 	public Recipe() {}
 	
-	public Recipe(int id, String name, String ingredients, String effect, String notes, byte[] image) {
+	public Recipe(int id, String name, String ingredients, String effect, String notes, String hearts, byte[] image) {
 		this.id = id;
 		this.name = name;
 		this.ingredients = ingredients;
 		this.effect = effect;
 		this.notes = notes;
+		this.hearts = hearts;
 		this.image = image;
 	}
 	
@@ -57,6 +59,12 @@ public class Recipe {
 	}
 	public void setNotes(String notes) {
 		this.notes = notes;
+	}
+	public String getHearts() {
+		return hearts;
+	}
+	public void setHearts(String hearts) {
+		this.hearts = hearts;
 	}
 	public byte[] getImage() {
 		return image;
