@@ -1,0 +1,10 @@
+localhost:8080/find/recipes/ingredients/apple/cane sugar/goat butter/tabantha wheat
+localhost:8080/find/recipes/ingredients/apple/cane sugar/goat butter/tabantha wheat/apple
+localhost:8080/find/recipes/ingredients/apple/goat butter/tabantha wheat/apple/cane sugar
+localhost:8080/find/recipes/ingredients/cane sugar/apple/tabantha wheat/apple/goat butter
+localhost:8080/find/recipes/ingredients/cane sugar/apple/tabantha wheat/goat butter/goat butter
+
+localhost:8080/search/recipes/ingredients/cane sugar/tabantha wheat/
+localhost:8080/search/recipes/ingredients/tabantha wheat/goat butter/
+localhost:8080/search/recipes/ingredients/cane sugar/apple/goat butter/apple
+localhost:8080/search/recipes/ingredients/cane sugar/apple/goat butter/goat butter

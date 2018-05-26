@@ -7,8 +7,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 
 @SpringBootApplication(scanBasePackages = {"com.BOTW"})
-@EntityScan("com.BOTW.CookBook.Ingredients")
-@EnableJpaRepositories("com.BOTW.CookBook.Ingredients") 
+@EntityScan("com.BOTW")
+@EnableJpaRepositories("com.BOTW") 
 public class BotwCookBookApplication {
 
 	public static void main(String[] args) {
