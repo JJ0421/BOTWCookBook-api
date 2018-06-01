@@ -3,7 +3,7 @@ package com.BOTW.CookBook.Recipes;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
+import com.BOTW.CookBook.Ingredients.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +13,8 @@ public class RecipeService implements RecipeServiceInterface{
 	@Autowired
 	private RecipeRepository recipeRepo;
 	
+	@Autowired
+	private IngredientRepository ingredientRepo;
 	
 	// /GET  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	
@@ -210,5 +212,55 @@ public class RecipeService implements RecipeServiceInterface{
 	
 	
 	// /POST  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	
+	//Checks the parameters of the recipe being added and adds if everything checks out.	
+	public boolean addRecipe(Recipe recipe) {
+		boolean check = true;
+		try {
+		if(recipe.getName().trim().isEmpty()) {
+			return false;
+		}
+		
+		if(recipe.getIngredients().trim().isEmpty()) {
+			return false;
+		}
+		
+		String [] ingredientsArr = recipe.getIngredients().toLowerCase().split(";");
+		if(ingredientsArr.length > 5) {
+			return false;
+		}
+		
+		List<String> ingredientsList = new ArrayList<>();
+		for(int i = 0; i < ingredientsArr.length; i++) {
+			Ingredient ingredient = new Ingredient();
+			ingredient = ingredientRepo.findByName(ingredientsArr[i]);
+			if(ingredient == null) {
+				check = false;
+			}else {
+				ingredientsList.add(ingredientsArr[i]);
+			}
+		}
+		
+		if(check) {
+			Collections.sort(ingredientsList);
+			String ingredients = "";
+			for(int i = 0; i < ingredientsList.size(); i++) {
+				ingredients += ingredientsList.get(i)+";";
+			}
+			List<Recipe> recipeList = new ArrayList<>();
+			recipeList = recipeRepo.findByIngredients(ingredients);
+			if(recipeList.size() > 0) {
+				check = false;
+			}
+		}	
+		
+		if(check) {
+			recipeRepo.save(recipe);
+		}
+		}catch(Exception ex) {
+			check = false;
+		}
+		return check;
+	}
 	
 }

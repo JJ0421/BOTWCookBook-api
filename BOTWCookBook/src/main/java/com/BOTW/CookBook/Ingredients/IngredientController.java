@@ -14,21 +14,20 @@ public class IngredientController{
 	@Autowired
 	private IngredientService ingredientService;
 	
-	@RequestMapping("/ingredients")
-	
+	@RequestMapping("/api/ingredients")	
 	//Gets all ingredients
 	public List<Ingredient> getIngredients() {
 		return ingredientService.getIngredients();
 	}
 	
 	//Gets ingredient by name being searched
-	@RequestMapping("/ingredients/getByName/{name}")
+	@RequestMapping("/api/ingredients/name/{name}")
 	public Ingredient getIngredientByName(@PathVariable String name) {
 		return ingredientService.getIngredientByName(name);
 	}
 	
 	//Gets ingredient by effect being searched
-	@RequestMapping("/ingredients/getByEffect/{effect}")
+	@RequestMapping("/api/ingredients/effect/{effect}")
 	public List<Ingredient> getIngredientByEffect(@PathVariable String effect) {
 		return ingredientService.getIngredientsByEffect(effect);
 	}
