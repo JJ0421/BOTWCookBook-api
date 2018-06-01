@@ -216,7 +216,9 @@ public class RecipeService implements RecipeServiceInterface{
 	//Checks the parameters of the recipe being added and adds if everything checks out.	
 	public boolean addRecipe(Recipe recipe) {
 		boolean check = true;
+
 		try {
+
 		if(recipe.getName().trim().isEmpty()) {
 			return false;
 		}
@@ -257,9 +259,11 @@ public class RecipeService implements RecipeServiceInterface{
 		if(check) {
 			recipeRepo.save(recipe);
 		}
+
 		}catch(Exception ex) {
 			check = false;
 		}
+
 		return check;
 	}
 	
