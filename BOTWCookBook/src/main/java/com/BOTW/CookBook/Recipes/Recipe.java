@@ -14,8 +14,6 @@ public class Recipe {
 	private String effect;
 	private String notes;
 	private String hearts;
-	@Lob
-	private byte[] image;
 	
 	public Recipe() {}
 	
@@ -26,7 +24,6 @@ public class Recipe {
 		this.effect = effect;
 		this.notes = notes;
 		this.hearts = hearts;
-		this.image = image;
 	}
 	
 	
@@ -66,13 +63,6 @@ public class Recipe {
 	public void setHearts(String hearts) {
 		this.hearts = hearts;
 	}
-	public byte[] getImage() {
-		return image;
-	}
-	public void setImage(byte[] image) {
-		this.image = image;
-	}
-	
 	
 	
 }

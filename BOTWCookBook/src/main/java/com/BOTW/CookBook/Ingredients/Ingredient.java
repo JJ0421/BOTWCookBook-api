@@ -16,8 +16,6 @@ public class Ingredient {
 	private String effect;
 	private String potency;
 	private String duration;
-	@Lob
-	private byte[] image;
 	
 	public Ingredient() {}
 	
@@ -71,12 +69,6 @@ public class Ingredient {
 	}
 	public void setDuration(String duration) {
 		this.duration = duration;
-	}
-	public byte[] getImage() {
-		return image;
-	}
-	public void setId(byte[] image) {
-		this.image = image;
 	}
 	
 	

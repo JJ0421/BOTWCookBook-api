@@ -78,6 +78,11 @@ public class RecipeController {
 		return recipeService.searchRecipesByIngredients(ingred1, ingred2, ingred3, ingred4);
 	}
 	
+	@RequestMapping("/api/search/recipes/ingredients/{ingred1}/{ingred2}/{ingred3}/{ingred4}/{ingred5}")
+	public List<Recipe> searchRecipesByIngredients(@PathVariable String ingred1, @PathVariable String ingred2, @PathVariable String ingred3, @PathVariable String ingred4, @PathVariable String ingred5){
+		return recipeService.getRecipesByIngredients(ingred1, ingred2, ingred3, ingred4, ingred5);
+	}
+	
 	
 	// /POST  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	@RequestMapping(method=RequestMethod.POST, value="/api/add/recipe")
