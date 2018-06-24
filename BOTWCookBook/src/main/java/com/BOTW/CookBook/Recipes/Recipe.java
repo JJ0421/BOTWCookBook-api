@@ -3,7 +3,6 @@ package com.BOTW.CookBook.Recipes;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Lob;
 
 @Entity
 public class Recipe {
