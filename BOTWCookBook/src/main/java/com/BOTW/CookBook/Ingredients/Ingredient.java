@@ -2,7 +2,6 @@ package com.BOTW.CookBook.Ingredients;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Lob;
 
 
 @Entity
